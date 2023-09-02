@@ -16,12 +16,12 @@ if __name__ == '__main__':
         "C": [11, 12, 13, 14],
         "D": [1001, 1002, 1003, 1004],
     }
-    c = Counter('item_total', 'demo item counter', ['id', 'type'])
+    c = Counter('item_total', 'demo item counter', ['service', 'id', 'type'])
     period = 600
     while True:
         type_ = random.choice(list(item_dict.keys()))
         id_ = random.choice(item_dict[type_])
-        c.labels(id_, type_).inc()
+        c.labels("wlb-coder", id_, type_).inc()
 
         _, res = divmod(int(time.time()), period)
 
