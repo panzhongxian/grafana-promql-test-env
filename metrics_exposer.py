@@ -6,7 +6,7 @@ import time
 from prometheus_client import Counter, start_http_server
 
 if __name__ == '__main__':
-    port = int(sys.argv[1])
+    port = 8080
     start_http_server(port)
 
     item_dict = {

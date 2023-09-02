@@ -1,0 +1,19 @@
+services:
+  grafana:
+    image: "grafana/grafana"
+    ports:
+      - "3000:3000"
+  promtheus:
+    image: "prom/prometheus"
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml 
+  sevice_1:
+    image: "panzhongxian/prom-metrics-demo"
+    ports:
+      - "18001:8080"
+  sevice_2:
+    image: "panzhongxian/prom-metrics-demo"
+    ports:
+      - "18002:8080"
